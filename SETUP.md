@@ -1,71 +1,146 @@
-# 🚀 Guía Completa de Instalación y Deployment
+# 🚀 Setup and Deployment Guide / Guía de Instalación y Despliegue
 
-## ⚠️ IMPORTANTE: Este es un proyecto React
-
-**NO puedes abrir el archivo `index.html` directamente en el navegador**. Necesitas compilar la aplicación primero.
+[English](#english) | [Español](#español)
 
 ---
 
-## 📋 Pre-requisitos
+<a name="english"></a>
+## 🇬🇧 English
 
-### Instalar Node.js y npm
+### ⚠️ IMPORTANT: This is a React Project
 
-1. Ve a [https://nodejs.org/](https://nodejs.org/)
-2. Descarga la versión **LTS** (recomendada)
-3. Instala el archivo descargado
-4. Verifica la instalación abriendo PowerShell:
+**You CANNOT open the `index.html` file directly in your browser.** You need to build the application first.
+
+### 📋 Prerequisites
+
+#### Install Node.js and npm
+
+1. Go to [https://nodejs.org/](https://nodejs.org/)
+2. Download the **LTS** version (recommended)
+3. Install the downloaded file
+4. Verify the installation by opening your terminal/PowerShell:
    ```bash
    node --version
    npm --version
    ```
 
----
+### 💻 Local Execution (Development)
 
-## 💻 Ejecución Local (Desarrollo)
-
-### Opción 1: Desde la carpeta completa
-
-```bash
-# 1. Abre PowerShell en la carpeta del proyecto
-cd C:\Users\cueva\Downloads\Emergent-main\Emergent-main\frontend
-
-# 2. Instala las dependencias (solo la primera vez)
-npm install
-
-# 3. Inicia el servidor de desarrollo
-npm start
-```
-
-**La aplicación se abrirá automáticamente en tu navegador en `http://localhost:3000`**
-
-### Opción 2: Build de producción local
-
-```bash
-# 1. Crea el build de producción
-npm run build
-
-# 2. Instala un servidor local simple
-npm install -g serve
-
-# 3. Sirve la aplicación
-serve -s build
-```
-
----
-
-## 🌐 Deploy en Netlify (GRATIS)
-
-### Método 1: Deploy desde GitHub (Recomendado)
-
-1. **Sube tu código a GitHub:**
+1. **Open your terminal in the project folder:**
    ```bash
-   # Inicializa git (si no lo has hecho)
-   cd C:\Users\cueva\Downloads\Emergent-main\Emergent-main
+   cd path/to/project/frontend
+   ```
+
+2. **Install dependencies (first time only):**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+
+**The application will automatically open in your browser at `http://localhost:3000`**
+
+### 🌐 Deploy to Netlify (FREE)
+
+#### Method 1: Deploy from GitHub (Recommended)
+
+1. **Upload your code to GitHub:**
+   ```bash
+   # Initialize git (if you haven't already)
    git init
    git add .
    git commit -m "Initial commit"
    
-   # Crea un repositorio en GitHub y conecta
+   # Create a repository on GitHub and connect it
+   git remote add origin https://github.com/YOUR-USERNAME/solar-system-3d.git
+   git push -u origin main
+   ```
+
+2. **Connect Netlify:**
+   - Go to [https://www.netlify.com/](https://www.netlify.com/)
+   - Create an account (free)
+   - Click "Add new site" → "Import an existing project"
+   - Select GitHub and authorize
+   - Select your repository
+
+3. **Configure the build:**
+   - Base directory: `frontend`
+   - Build command: `npm run build`
+   - Publish directory: `frontend/build` (or just `build` if base directory is set)
+   - Click "Deploy site"
+
+✅ **Done! Your site will be live on a URL like `https://your-site.netlify.app`**
+
+#### Method 2: Manual Deploy (Drag & Drop)
+
+1. **Build locally:**
+   ```bash
+   cd frontend
+   npm install --legacy-peer-deps
+   npm run build
+   ```
+
+2. **Upload to Netlify:**
+   - Go to [https://app.netlify.com/drop](https://app.netlify.com/drop)
+   - Drag and drop the `build` folder onto the page
+   - Your site will be live immediately!
+
+---
+
+<a name="español"></a>
+## 🇪🇸 Español
+
+### ⚠️ IMPORTANTE: Este es un proyecto React
+
+**NO puedes abrir el archivo `index.html` directamente en el navegador**. Necesitas compilar la aplicación primero.
+
+### 📋 Pre-requisitos
+
+#### Instalar Node.js y npm
+
+1. Ve a [https://nodejs.org/](https://nodejs.org/)
+2. Descarga la versión **LTS** (recomendada)
+3. Instala el archivo descargado
+4. Verifica la instalación abriendo tu terminal/PowerShell:
+   ```bash
+   node --version
+   npm --version
+   ```
+
+### 💻 Ejecución Local (Desarrollo)
+
+1. **Abre tu terminal en la carpeta del proyecto:**
+   ```bash
+   cd ruta/al/proyecto/frontend
+   ```
+
+2. **Instala las dependencias (solo la primera vez):**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+
+3. **Inicia el servidor de desarrollo:**
+   ```bash
+   npm start
+   ```
+
+**La aplicación se abrirá automáticamente en tu navegador en `http://localhost:3000`**
+
+### 🌐 Deploy en Netlify (GRATIS)
+
+#### Método 1: Deploy desde GitHub (Recomendado)
+
+1. **Sube tu código a GitHub:**
+   ```bash
+   # Inicializa git (si no lo has hecho)
+   git init
+   git add .
+   git commit -m "Initial commit"
+   
+   # Crea un repositorio en GitHub y conéctalo
    git remote add origin https://github.com/TU-USUARIO/solar-system-3d.git
    git push -u origin main
    ```
@@ -73,24 +148,24 @@ serve -s build
 2. **Conecta Netlify:**
    - Ve a [https://www.netlify.com/](https://www.netlify.com/)
    - Crea una cuenta (gratis)
-   - Click en "Add new site" → "Import an existing project"
+   - Haz clic en "Add new site" → "Import an existing project"
    - Selecciona GitHub y autoriza
    - Selecciona tu repositorio
 
 3. **Configura el build:**
    - Base directory: `frontend`
    - Build command: `npm run build`
-   - Publish directory: `frontend/build`
-   - Click "Deploy site"
+   - Publish directory: `frontend/build` (o solo `build` si el base directory está configurado)
+   - Haz clic en "Deploy site"
 
 ✅ **¡Listo! Tu sitio estará en vivo en una URL como `https://tu-sitio.netlify.app`**
 
-### Método 2: Deploy Manual (Drag & Drop)
+#### Método 2: Deploy Manual (Drag & Drop)
 
 1. **Crea el build localmente:**
    ```bash
    cd frontend
-   npm install
+   npm install --legacy-peer-deps
    npm run build
    ```
 
@@ -98,77 +173,3 @@ serve -s build
    - Ve a [https://app.netlify.com/drop](https://app.netlify.com/drop)
    - Arrastra la carpeta `build` a la página
    - ¡Tu sitio estará en vivo inmediatamente!
-
----
-
-## 📁 Estructura del Proyecto Limpio
-
-```
-Emergent-main/
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── SolarSystem.jsx
-│   │   ├── data/
-│   │   │   └── planets.js
-│   │   ├── App.js
-│   │   └── index.js
-│   ├── package.json
-│   └── ...
-├── netlify.toml
-├── README.md
-└── .gitignore
-```
-
----
-
-## 🐛 Solución de Problemas
-
-### Error: "npm no se reconoce"
-- **Solución:** Instala Node.js desde [nodejs.org](https://nodejs.org/)
-
-### Error: "Cannot find module"
-- **Solución:** Ejecuta `npm install` en la carpeta `frontend`
-
-### La página está en blanco
-- **Solución:** Abre la consola del navegador (F12) para ver errores
-- Verifica que ejecutaste `npm start` en la carpeta correcta
-
-### El CSS no se carga
-- **Solución:** Limpia la caché del navegador y recarga con Ctrl+Shift+R
-
----
-
-## 📝 Cambios Realizados al Proyecto
-
-### Archivos Eliminados:
-- ✅ `.emergent/` - Configuración de Emerge.ia
-- ✅ `test_result.md` - Protocolo de testing de IA
-- ✅ `.gitconfig` - Config específica de IA
-- ✅ `backend/` - No necesario para este proyecto
-- ✅ `tests/` - Tests vacíos
-- ✅ `mockData.js` - Movido a `data/planets.js`
-
-### Código Limpiado:
-- ✅ Eliminados comentarios tipo "Enhanced...", "Individual Component", etc.
-- ✅ Removidos comentarios obvios y descriptivos de IA
-- ✅ Reorganizada estructura de carpetas (`data/planets.js`)
-- ✅ Simplificado sin perder funcionalidad
-
-### Archivos Nuevos/Actualizados:
-- ✅ `README.md` - Documentación profesional
-- ✅ `netlify.toml` - Configuración para deployment
-- ✅ `.gitignore` - Gitignore limpio
-- ✅ `SETUP.md` - Esta guía
-
----
-
-## 🎯 ¿Qué hacer ahora?
-
-1. **Instala Node.js** si no lo tienes
-2. **Ejecuta localmente** con `npm install` y `npm start`
-3. **Súbelo a GitHub** para control de versiones
-4. **Despliega en Netlify** para tenerlo en vivo
-
-¡Tu proyecto está 100% limpio y listo para publicar! 🎉
