@@ -7,13 +7,6 @@ Una impresionante simulación interactiva del sistema solar en 3D, construida de
 
 ## ✨ Características Principales
 
-### 🌍 Realismo Visual
-- **Texturas 2K de Alta Calidad**: Superficies detalladas para el Sol y todos los planetas.
-- **Atmósferas Dinámicas**: Capa de nubes en movimiento independiente sobre la Tierra.
-- **Relieve (Bump Maps)**: Montañas y cráteres con profundidad real en la Tierra, la Luna y Marte.
-- **Iluminación Realista**: El Sol emite luz propia, iluminando las caras de los planetas y creando sombras dinámicas.
-- **Fondo Inmersivo**: Panorama de la Vía Láctea en 8K.
-
 ### 🌑 Cuerpos Celestes
 - **Sistema Completo**: Sol + 8 Planetas (Mercurio a Neptuno).
 - **Lunas**: 
